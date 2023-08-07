@@ -2,7 +2,7 @@
 
 const Works = () => {
     return (
-        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen flex flex-col">
+        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen flex flex-col" id="work">
             <div className="flex items-center px-[20%]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">My Work</h1>
             </div>

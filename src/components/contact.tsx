@@ -2,7 +2,7 @@ import avatar from '../assets/avatar.png'
 
 const Contact = () => {
     return (
-        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen relative">
+        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen relative" id="contact">
             <div className="flex items-center px-[20%]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
             </div>

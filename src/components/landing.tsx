@@ -8,7 +8,7 @@ const Landing = () => {
 
 
     return(
-      <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen flex">
+      <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-screen flex" id="home">
         <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex justify-center items-center px-[40px] lg:pt-[360px]">
           <h3 className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></h3>
         </div>
