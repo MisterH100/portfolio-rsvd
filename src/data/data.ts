@@ -2,21 +2,21 @@
 export const workData = [
     {
         id: 1,
-        title: "",
-        disc: "",
-        img: ""
+        title: "Sizzle - BBQ Finder",
+        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like and results should shown.",
+        img: "appImages/sizzleapp.png"
     },
     {
         id: 2,
-        title: "",
+        title: "Num 2",
         disc: "",
-        img: ""
+        img: "../assets/sizzleapp.png"
     },
     {
         id: 3,
-        title: "",
+        title: "Num 3",
         disc: "",
-        img: ""
+        img: "../assets/sizzleapp.png"
     }
 ]
 
