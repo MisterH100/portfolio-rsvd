@@ -2,11 +2,11 @@ import avatar from '../assets/avatar.png'
 
 const Contact = () => {
     return (
-        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-full relative" id="contact">
-            <div className="flex items-center px-[10%] md:px-[20%] ">
+        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-full relative py-[100px]" id="contact">
+            <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
             </div>
-            <div className="flex flex-col gap-[20px] px-[10%] md:px-[20%] py-[100px]">
+            <div className="flex flex-col gap-[20px] px-[10%] pb-[50px]">
                 <label
                     className="flex gap-[10px] items-center"
                     htmlFor="name">
@@ -55,23 +55,23 @@ const Contact = () => {
                 />
             </div>
 
-            <div className="bg-primaryDark w-[500px] absolute top-[100px] right-[10px] hidden lg:block -z-[10px]">
-                <div>
-                    <img
-                        className="ml-[10px]"
-                        src={avatar}
-                        alt="avatar image"
-                        width={100}
-                        height={100}
-                    />
-                    <div className="bg-secondary p-[20px]">
-                        <h1 className="text-black text-[2rem]">Care to check out my blog</h1>
-                        <p className="text-black text-[1rem] w-[400px] whitespace-wrap">Why is UI important, how does a website benefit from having a good ui, how it creates a trust between you and your users, find out more about ui design as i dig deep into it</p>
-                    </div>
-                    <button className="bg-primary w-[100px] h-[50px] absolute top-[50px] right-[50px] text-secondary text-center">
-                        My Blog
-                    </button>
+            <div className="bg-primaryDark w-[500px] absolute top-[300px] right-[10px] hidden lg:block -z-[10px]">
+
+                <img
+                    className="ml-[10px]"
+                    src={avatar}
+                    alt="avatar image"
+                    width={100}
+                    height={100}
+                />
+                <div className="bg-secondary p-[20px]">
+                    <h1 className="text-black text-[2rem]">Care to check out my blog</h1>
+                    <p className="text-black text-[1rem] w-[400px] whitespace-wrap">Why is UI important, how does a website benefit from having a good ui, how it creates a trust between you and your users, find out more about ui design as i dig deep into it</p>
                 </div>
+                <button className="bg-primary w-[100px] h-[50px] absolute top-[50px] right-[50px] text-secondary text-center">
+                    My Blog
+                </button>
+ 
             </div>
         </section>
     )

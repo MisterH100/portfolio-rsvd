@@ -7,7 +7,7 @@ const Works = () => {
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">My Work</h1>
             </div>
-            <div className="flex gap-[20px] flex-wrap justify-center px-[50px] md:px-[100px]">
+            <div className="flex gap-[20px] flex-wrap justify-center px-[50px] md:px-[50px]">
                 {workData.map((data) => {
                     return (
                         <article key={data.id}>
