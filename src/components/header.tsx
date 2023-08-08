@@ -2,7 +2,7 @@
 const Header = () => {
     return (
       <>
-        <header className="sticky top-0 z-[100] bg-primaryDark w-full min-w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center">
+        <header className="sticky top-0 z-[100] bg-primaryDark w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center">
           <h1 className="text-[3rem] text-secondary font-light">handsome.<span className="font-extrabold">dev</span></h1>
           <nav className="w-full px-[20px] lg:px-[10px] flex justify-center lg:justify-end">
             <ul className="flex gap-[20px] lg:gap-[30px] font-normal text-[1.5rem] lg:text-[2rem]">
