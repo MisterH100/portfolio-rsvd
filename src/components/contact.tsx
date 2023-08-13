@@ -1,6 +1,41 @@
 import avatar from '../assets/avatar.png'
+import { useState } from 'react';
+import axios from 'axios';
 
 const Contact = () => {
+    const [color, setColor] = useState("#4D4242")
+    const [text, setText] = useState("Submit");
+    const [isDisabled, setIsDisabled] = useState(false)
+    const [name, setName] = useState("");
+    const [lastName, setlastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const HanleSubmit = (e:React.MouseEvent) => {
+        
+        e.preventDefault();
+        axios.post("http://localhost:8000/api/emails", {
+            name: name,
+            lastName: lastName,
+            email: email,
+            message: message
+
+        })
+         .then(function (response) {
+            console.log(response);
+            setText("Sent");
+            setColor("#00f");
+            setIsDisabled(true)
+        })
+        .catch(function (error) {
+            console.log(error);
+            setText("uh oh error!!");
+            setColor("#f00");
+        });
+
+
+    }
+
     return (
         <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-full relative py-[100px]" id="contact">
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
@@ -16,6 +51,7 @@ const Contact = () => {
                         id="name"
                         placeholder="Name:"
                         maxLength={20}
+                        onChange={(e)=> setName(e.target.value)}
                     />Name
                 </label>
 
@@ -28,6 +64,7 @@ const Contact = () => {
                         id="lastname"
                         placeholder="Last name:"
                         maxLength={20}
+                        onChange={(e)=> setlastName(e.target.value)}
                     />Lastname
                 </label>
                 
@@ -40,6 +77,7 @@ const Contact = () => {
                         id="email"
                         placeholder="email:"
                         maxLength={40}
+                        onChange={(e)=> setEmail(e.target.value)}
                     />Email
                 </label>
                 <label
@@ -47,11 +85,17 @@ const Contact = () => {
                     <textarea
                         className="bg-secondary p-[6px] w-[200px] md:w-[400px] h-[100px] text-black resize-none"
                         maxLength={200}
+                        onChange={(e)=> setMessage(e.target.value)}
                     />Message
                 </label>
                 <input
-                    className="bg-primaryLight w-[200px] h-[50px] text-secondary text-center rounded cursor-pointer"
+                    //bg-primaryLight
+                    style={{backgroundColor: color}}
+                    className="w-[200px] h-[50px] text-secondary text-center rounded cursor-pointer"
                     type="submit"
+                    disabled = {isDisabled}
+                    value={text}
+                    onClick={HanleSubmit}
                 />
             </div>
 
