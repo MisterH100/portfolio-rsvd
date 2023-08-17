@@ -3,14 +3,14 @@ export const workData = [
     {
         id: 1,
         title: "Sizzle - BBQ Finder",
-        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like and results should shown.",
+        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like, want to find out more? or better yet work with me feel free to contact me.",
         img: "appImages/sizzleapp.png"
     },
     {
         id: 2,
-        title: "Num 2",
-        disc: "",
-        img: "../assets/sizzleapp.png"
+        title: "Insights - blogging",
+        disc: "Insights is my blogging application where i share my intrests in web development and my newly found research on UI/UX design, your want to share your intrests as well?, contact me to find out more.",
+        img: "appImages/insights.png"
     },
     {
         id: 3,

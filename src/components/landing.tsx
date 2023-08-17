@@ -8,7 +8,7 @@ const Landing = () => {
 
 
     return(
-      <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-full flex" id="home">
+      <section className="bg-background bg-cover bg-center w-full h-full flex" id="home">
         <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex justify-center items-center px-[40px] pt-[100px] lg:pt-[360px]">
           <h3 className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></h3>
         </div>
@@ -17,16 +17,18 @@ const Landing = () => {
           <h2 className="text-[2rem]">hello, i am Handsome</h2>
           <h1 className="text-[3rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.</h1>
           <div className="flex flex-wrap gap-[10px] pt-[10px]">
+            <p>My Array of Skills [ </p>
             {skillData.map((item) => {
               return (
                 <li
-                  className="list-disc"
+                  className="list-none underline cursor-pointer"
                   key={item.id}
                 >
                   {item.title}
                 </li>
               )
             })}
+            <span>]</span>
           </div>
 
         </div>

@@ -1,19 +1,16 @@
-
-import Header from './components/header';
-import Landing from './components/landing';
-import Works from './components/works';
-import Contact from './components/contact';
-import Footer from './components/footer';
-
+import { Routes, Route } from 'react-router-dom';
+import Layout from './pages/layout';
+import ThankYou from './pages/thankyou';
+import Error from './pages/error';
 function App() {
 
   return (
     <main className="font-default">
-      <Header />
-      <Landing />
-      <Works />
-      <Contact />
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Layout/>}/>
+        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/error" element={<Error/>}/>
+      </Routes>
     </main>
   )
 }
