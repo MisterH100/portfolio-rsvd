@@ -16,7 +16,7 @@ export default {
         primaryDark: "#1C1818"
       },
       backgroundImage:  {
-        'background': "url('background.png')"
+        /*'background': "url('background.png')"*/
       }
     },
   },

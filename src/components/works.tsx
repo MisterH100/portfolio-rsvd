@@ -19,8 +19,8 @@ const Works = () => {
                                 />
                             </div>
                             <div className="bg-secondaryDark w-[400px] min-w-[250px] p-[20px] md:p-[10px] border-b-[1px] border-secondary">
-                                <p className="text-secondary whitespace-wrap w-full underline">{data.title}</p>
-                                <p className="text-secondary whitespace-wrap h-[150px] w-full ">{ data.disc }</p>
+                                <p className="text-secondary whitespace-wrap w-full underline text-white">{data.title}</p>
+                                <p className="text-secondary whitespace-wrap h-[150px] w-full text-white">{ data.disc }</p>
                             </div>
                         </article>
                     )

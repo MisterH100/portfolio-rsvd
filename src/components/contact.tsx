@@ -2,17 +2,44 @@ import avatar from '../assets/avatar.png'
 import { useState } from 'react';
 import axios from 'axios';
 
+interface IModal{
+    modalHeading: string,
+    modalMessage: string,
+    modalAction: string,
+    modalStatus(arg: boolean) : any 
+
+}
+
+const Modal = ({ modalHeading,modalMessage,modalAction,modalStatus}:IModal) =>{
+    return (
+        <article className="absolute backdrop-blur-sm w-full h-full top-0 text-black flex justify-center items-center">
+            <div className=" bg-secondary w-[50%] h-[200px] flex flex-col justify-center items-center shadow-lg">
+                <h1 className="text-red text-[2rem]">{modalHeading}</h1>
+                <p className="text-black text-[1rem]">{modalMessage}</p>
+                <button
+                    onClick={() =>modalStatus(false)}
+                    className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] my-10 text-secondary text-center">
+                    {modalAction}
+                </button>
+            </div>
+        </article>
+    )
+}
+
+
 const Contact = () => {
-    const [succsess, setSuccess]= useState(false)
-    const [color, setColor] = useState("#4D4242")
-    const [text, setText] = useState("Submit");
-    const [isDisabled, setIsDisabled] = useState(false)
+    const [status, setStatus] = useState<boolean>();
+    const [loading, setLoading] = useState<boolean>();
+    const [modalText, setModalText] = useState("");
+    const [heading, setHeading] = useState("");
     const [name, setName] = useState("");
     const [lastName, setlastName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const HanleSubmit = () => {
+    const HanleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true)
         axios.post("http://localhost:8000/api/emails", {
             name: name,
             lastName: lastName,
@@ -20,20 +47,24 @@ const Contact = () => {
             message: message
 
         })
-         .then(function (response) {
+        .then(function (response) {
             console.log(response);
-            setText("Sent");
-            setColor("#00f");
-            setIsDisabled(true);
-            setSuccess(true);
+            setTimeout(() => {
+                setStatus(true);
+                setLoading(false);
+                setHeading("submitted");
+                setModalText("form submitted, thank you");
+            }, 3000);
         })
         .catch(function (error) {
             console.log(error);
-            setText("uh oh error!!");
-            setColor("#f00");
-            setSuccess(false);
+            setTimeout(() => {
+                setStatus(true);
+                setLoading(false);
+                setHeading("Error");
+                setModalText("form failed to submit");
+            }, 3000);
         });
-
 
     }
 
@@ -42,7 +73,7 @@ const Contact = () => {
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
             </div>
-            <form action={ succsess?"/thankyou":"/error"} className="flex flex-col gap-[20px] px-[10%] pb-[50px]">
+            <form onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px]">
                 <label
                     className="flex gap-[10px] items-center"
                     htmlFor="name">
@@ -91,13 +122,10 @@ const Contact = () => {
                     />Message
                 </label>
                 <input
-                    //bg-primaryLight
-                    style={{backgroundColor: color}}
-                    className="w-[200px] h-[50px] text-secondary text-center rounded cursor-pointer"
+                    className="bg-primaryLight w-[200px] h-[50px] text-secondary text-center rounded cursor-pointer"
                     type="submit"
-                    disabled = {isDisabled}
-                    value={text}
-                    onSubmit={HanleSubmit}
+                    disabled = {loading}
+                    value={loading? "sending...": "submit"}
                 />
             </form>
 
@@ -119,6 +147,14 @@ const Contact = () => {
                 </button>
  
             </div>
+
+            {status ?
+                <Modal
+                    modalHeading={heading}
+                    modalMessage={modalText}
+                    modalAction="close" modalStatus={setStatus}
+                /> : ""};
+
         </section>
     )
 }
