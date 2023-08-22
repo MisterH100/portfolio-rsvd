@@ -17,7 +17,7 @@ export default {
       },
       backgroundImage:  {
         'background1': "url('water.gif')",
-        'background2': "url('Lilly.gif')",
+        'background2': "url('./assets/Lilly.gif')",
         'background3': "url('spin.gif')"
       }
     },
