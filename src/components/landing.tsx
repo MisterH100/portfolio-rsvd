@@ -3,12 +3,11 @@ import github from '../assets/github.svg';
 import linkedIn from '../assets/linkedIn.svg';
 import twitter from '../assets/twitter.svg';
 import { skillData } from '../data/data';
-
 const Landing = () => {
 
 
     return(
-      <section className="bg-background bg-cover bg-center w-full h-full flex" id="home">
+      <section className="bg-background2 bg-no-repeat bg-center sm:bg-right bg-scroll w-full h-[100vh] flex" id="home">
         <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex justify-center items-center px-[40px] pt-[100px] lg:pt-[360px]">
           <h3 className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></h3>
         </div>

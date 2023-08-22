@@ -16,7 +16,9 @@ export default {
         primaryDark: "#1C1818"
       },
       backgroundImage:  {
-        /*'background': "url('background.png')"*/
+        'background1': "url('water.gif')",
+        'background2': "url('Lilly.gif')",
+        'background3': "url('spin.gif')"
       }
     },
   },

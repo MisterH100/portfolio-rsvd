@@ -1,30 +1,8 @@
 import avatar from '../assets/avatar.png'
+import Modal from './modal';
 import { useState } from 'react';
 import axios from 'axios';
 
-interface IModal{
-    modalHeading: string,
-    modalMessage: string,
-    modalAction: string,
-    modalStatus(arg: boolean) : any 
-
-}
-
-const Modal = ({ modalHeading,modalMessage,modalAction,modalStatus}:IModal) =>{
-    return (
-        <article className="absolute backdrop-blur-sm w-full h-full top-0 text-black flex justify-center items-center">
-            <div className=" bg-secondary w-[50%] h-[200px] flex flex-col justify-center items-center shadow-lg">
-                <h1 className="text-red text-[2rem]">{modalHeading}</h1>
-                <p className="text-black text-[1rem]">{modalMessage}</p>
-                <button
-                    onClick={() =>modalStatus(false)}
-                    className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] my-10 text-secondary text-center">
-                    {modalAction}
-                </button>
-            </div>
-        </article>
-    )
-}
 
 
 const Contact = () => {
@@ -69,67 +47,67 @@ const Contact = () => {
     }
 
     return (
-        <section className="bg-background bg-cover bg-center bg-no-repeat w-full h-full relative py-[100px]" id="contact">
+        <section className="bg-background2 bg-center sm:bg-left bg-no-repeat bg-scroll w-full h-full relative " id="contact">
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
             </div>
-            <form onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px]">
+            <form onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
                 <label
-                    className="flex gap-[10px] items-center"
-                    htmlFor="name">
+                    className="w-[200px] md:w-[400px]"
+                    htmlFor="name">Name
                     <input
-                        className="bg-secondary w-[200px] md:w-[400px] p-[6px] text-black"
+                        className="block w-full bg-secondary p-[6px] text-black"
                         type="text"
                         id="name"
                         placeholder="Name:"
                         maxLength={20}
                         required
                         onChange={(e)=> setName(e.target.value)}
-                    />Name
+                    />
                 </label>
 
                 <label
-                    className="flex gap-[10px] items-center"
-                    htmlFor="lastname">
+                    className="w-[200px] md:w-[400px]"
+                    htmlFor="lastname">Lastname
                     <input
-                        className="bg-secondary w-[200px] md:w-[400px] p-[6px] text-black"
+                        className="block w-full bg-secondary p-[6px] text-black"
                         type="text"
                         id="lastname"
                         placeholder="Last name:"
                         maxLength={20}
                         onChange={(e)=> setlastName(e.target.value)}
-                    />Lastname
+                    />
                 </label>
                 
                 <label
-                    className="flex gap-[10px] items-center"
-                    htmlFor="email">
+                    className="w-[200px] md:w-[400px]"
+                    htmlFor="email">Email
                     <input
-                        className="bg-secondary w-[200px] md:w-[400px] p-[6px] text-black"
+                        className="block w-full bg-secondary p-[6px] text-black"
                         type="email"
                         id="email"
                         placeholder="email:"
                         required
                         onChange={(e)=> setEmail(e.target.value)}
-                    />Email
+                    />
                 </label>
                 <label
-                    className="flex gap-[10px]">
+                    className="w-[200px] md:w-[400px] h-[100px]">Message
                     <textarea
-                        className="bg-secondary p-[6px] w-[200px] md:w-[400px] h-[100px] text-black resize-none"
+                        className="block bg-secondary p-[6px] w-full h-full text-black resize-none"
                         maxLength={200}
                         onChange={(e)=> setMessage(e.target.value)}
-                    />Message
+                    />
                 </label>
                 <input
-                    className="bg-primaryLight w-[200px] h-[50px] text-secondary text-center rounded cursor-pointer"
+                    className="bg-primaryLight w-[200px] h-[50px] mt-[20px] text-secondary text-center rounded cursor-pointer"
                     type="submit"
                     disabled = {loading}
                     value={loading? "sending...": "submit"}
                 />
             </form>
 
-            <div className="bg-primaryDark w-[500px] absolute top-[300px] right-[10px] hidden lg:block -z-[10px]">
+            <div className="bg-primaryDark w-[500px] absolute top-[200px] right-[10px] hidden lg:block -z-[10px]">
 
                 <img
                     className="ml-[10px]"
@@ -152,8 +130,9 @@ const Contact = () => {
                 <Modal
                     modalHeading={heading}
                     modalMessage={modalText}
-                    modalAction="close" modalStatus={setStatus}
-                /> : ""};
+                    modalAction="close"
+                    modalStatus={setStatus}
+                /> : ""}
 
         </section>
     )

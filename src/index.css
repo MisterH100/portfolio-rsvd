@@ -1,16 +1,13 @@
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color:#0D0B1D;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,9 +24,3 @@ body {
 }
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #456e92;
-    background-color: #242424;
-  }
-}
