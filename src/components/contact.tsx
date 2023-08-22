@@ -10,19 +10,30 @@ const Contact = () => {
     const [loading, setLoading] = useState<boolean>();
     const [modalText, setModalText] = useState("");
     const [heading, setHeading] = useState("");
-    const [name, setName] = useState("");
-    const [lastName, setlastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    
+    const [formData, setFormData] = useState({
+        name: "",
+        lastName: "",
+        email: "",
+        message: "",
+    });
+
+    const HandleChange = (e:any) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
 
     const HanleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true)
+
         axios.post("http://localhost:8000/api/emails", {
-            name: name,
-            lastName: lastName,
-            email: email,
-            message: message
+            name: formData.name,
+            lastName: formData.lastName,
+            email: formData.email,
+            message: formData.message
 
         })
         .then(function (response) {
@@ -59,10 +70,11 @@ const Contact = () => {
                         className="block w-full bg-secondary p-[6px] text-black"
                         type="text"
                         id="name"
+                        name="name"
                         placeholder="Name:"
                         maxLength={20}
                         required
-                        onChange={(e)=> setName(e.target.value)}
+                        onChange={HandleChange}
                     />
                 </label>
 
@@ -73,9 +85,10 @@ const Contact = () => {
                         className="block w-full bg-secondary p-[6px] text-black"
                         type="text"
                         id="lastname"
+                        name="lastName"
                         placeholder="Last name:"
                         maxLength={20}
-                        onChange={(e)=> setlastName(e.target.value)}
+                        onChange={HandleChange}
                     />
                 </label>
                 
@@ -86,17 +99,19 @@ const Contact = () => {
                         className="block w-full bg-secondary p-[6px] text-black"
                         type="email"
                         id="email"
+                        name="email"
                         placeholder="email:"
                         required
-                        onChange={(e)=> setEmail(e.target.value)}
+                        onChange={HandleChange}
                     />
                 </label>
                 <label
                     className="w-[200px] md:w-[400px] h-[100px]">Message
                     <textarea
                         className="block bg-secondary p-[6px] w-full h-full text-black resize-none"
+                        name="message"
                         maxLength={200}
-                        onChange={(e)=> setMessage(e.target.value)}
+                        onChange={HandleChange}
                     />
                 </label>
                 <input
