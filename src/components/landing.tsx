@@ -15,23 +15,26 @@ const Landing = () => {
   
         <div className="w-[60%] h-full flex flex-col py-[40px] items-center gap-[40px] md:items-start md:justify-center lg:px-[40px]">
           <motion.h2
-            initial={{opacity: 0}}
-            whileInView={{ opacity: 1 }}
-            transition={{ type: "spring", delay: 3}}
+            initial={{opacity: 0, scale: 0}}
+            whileInView={{ opacity: 1, scale:1 }}
+            transition={{ type: "spring", delay: 3 }}
+            viewport={{ once: true }}
             className="text-[2rem]">hello, i am Handsome
           </motion.h2>
 
           <motion.h1
-            initial={{opacity: 0}}
-            whileInView={{ opacity: 1 }}
+            initial={{opacity: 0, scale: 0}}
+            whileInView={{ opacity: 1, scale:1}}
             transition={{ type: "spring", delay: 3}}
+            viewport={{ once: true }}
             className="text-[3rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.
           </motion.h1>
           
           <motion.div
-            initial={{opacity: 0}}
-            whileInView={{ opacity: 1 }}
-            transition={{ type: "spring", delay: 3}}
+            initial={{opacity: 0, scale: 0}}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", delay: 3 }}
+            viewport={{ once: true }}
             className="flex flex-wrap gap-[10px] pt-[10px]">
             <p>My Array of Skills [ </p>
             {skillData.map((item) => {
@@ -52,9 +55,13 @@ const Landing = () => {
   
         <div className="w-[20%] h-full flex flex-col items-center justify-center gap-[50px] whitespace-nowrap pt-[40px]">
           <h3 className="rotate-90"> follow me</h3>
-          <div className="w-[1px] h-[100px] bg-secondary">
+          <motion.div
+            whileInView={{ y: [-100, 0] }}
+            transition={{ type: "spring", delay: 3 }}
+            viewport={{ once: true }}
+            className="w-[1px] h-[100px] bg-secondary">
   
-          </div>
+          </motion.div>
             <motion.a
               whileHover={{ scale: 1.5 }}
               whileTap={{rotate: [0,-45, 0, 45,0]}}

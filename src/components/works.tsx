@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion"
 import { workData } from "../data/data";
 
 const Works = () => {
@@ -10,7 +10,11 @@ const Works = () => {
             <div className="flex gap-[20px] flex-wrap justify-center px-[50px] md:px-[50px]">
                 {workData.map((data) => {
                     return (
-                        <article key={data.id}>
+                        <motion.article
+                            initial={{opacity: 0, scale: 0}}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ type: "spring" }}
+                            key={data.id}>
                             <div className="bg-secondary w-[400px] min-w-[250px] h-[200px]">
                                 <img
                                     className="w-full h-full cursor-pointer"
@@ -22,7 +26,7 @@ const Works = () => {
                                 <p className="text-secondary whitespace-wrap w-full underline text-white">{data.title}</p>
                                 <p className="text-secondary whitespace-wrap h-[150px] w-full text-white">{ data.disc }</p>
                             </div>
-                        </article>
+                        </motion.article>
                     )
                 })}
 
