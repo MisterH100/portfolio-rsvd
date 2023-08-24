@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <footer className="bg-primaryDark w-full h-[200px] text-center">
+        <footer className="light bg-primaryDark w-full h-[200px] text-center">
             <div>
                 <h1>Learn more about me and my interests on my blog <a href="" className="underline">here</a></h1>
                 <h1>This website was built with VITE + REACT and Tailwind</h1>

@@ -1,16 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color:#0D0B1D;
+  background-color:#000000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+.light{
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
 
 html{
   scroll-behavior: smooth;

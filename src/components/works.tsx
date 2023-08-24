@@ -3,7 +3,7 @@ import { workData } from "../data/data";
 
 const Works = () => {
     return (
-        <section className="bg-background2 bg-no-repeat bg-center bg-fixed w-full h-full flex flex-col" id="work">
+        <section className="bg-background5 bg-center  w-full h-full flex flex-col" id="work">
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">My Work</h1>
             </div>

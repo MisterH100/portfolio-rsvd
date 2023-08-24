@@ -58,7 +58,7 @@ const Contact = () => {
     }
 
     return (
-        <section className="bg-background2 bg-center sm:bg-left bg-no-repeat bg-scroll w-full h-full relative " id="contact">
+        <section className="bg-background5 bg-center w-full h-full relative " id="contact">
             <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
                 <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
             </div>
