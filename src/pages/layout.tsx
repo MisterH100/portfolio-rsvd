@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import loadingAnimation from '../assets/loading.gif';
 import Header from '../components/header';
 import Landing from '../components/landing';
@@ -17,11 +17,13 @@ const Loading = () => {
 const Layout = () => {
     const [onLoad, setOnload] = useState(true);
     window.addEventListener("load", () => {
+        console.log("Loading")
+    })
+    useEffect(() => {
         setTimeout(() => {
             setOnload(false);
         }, 2000);
-    })
- 
+    },[]);
     
     return (
         <section className="relative">
