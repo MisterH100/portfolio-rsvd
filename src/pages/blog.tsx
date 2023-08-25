@@ -18,7 +18,7 @@ const Blog = () => {
                         height={100}
                     />
 
-                    <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] absolute top-[50px] right-[50px] text-secondary text-center">
+                    <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] absolute text-secondary text-center">
                         My Blog
                     </button>
                 </div>
