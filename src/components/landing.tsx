@@ -10,7 +10,7 @@ const Landing = () => {
     return(
       <section className="bg-background5 bg-center bg-opacity-0 w-full h-full flex" id="home">
         
-        <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex flex-col justify-center items-center pt-[200px]">
+        <div className="w-[20%] h-full opacity-0 lg:opacity-[6] flex flex-col justify-center items-center pt-[200px]">
           <motion.a
             initial={{opacity: 0}}
             whileInView={{ opacity: 1, y:[-100, 0] }}
@@ -18,7 +18,6 @@ const Landing = () => {
             viewport={{ once: true }}
             href="mailto:handsomenyathi1@gmail.com">
             <img
-              className="opacity-0 lg:opacity-[6]"
               src={envelope}
               alt="envelope"
               width={50}

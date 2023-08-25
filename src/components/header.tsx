@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import {useState } from "react";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [isScrolled, setisScrolled] = useState(false);
@@ -39,17 +39,37 @@ const Header = () => {
           viewport={{ once: true }}
           className="w-full px-[20px] lg:px-[10px] flex justify-center lg:justify-end">
           <ul className="flex gap-[20px] lg:gap-[30px] font-normal text-[1.5rem] lg:text-[2rem]">
-            <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer"><a href="#home">Home</a>
+
+            <motion.li
+              whileHover="hover"
+              whileTap="tap"
+              variants={varients}>
+              <a href="#home">Home</a>
             </motion.li>
 
-            <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer"><a href="#work">Work</a>
+            <motion.li
+              whileHover="hover"
+              whileTap="tap"
+              variants={varients} c
+              lassName="cursor-pointer">
+              <a href="#work">Work</a>
             </motion.li>
 
-            <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer"><a href="#contact">Contact</a>
+            <motion.li
+              whileHover="hover"
+              whileTap="tap"
+              variants={varients}
+              className="cursor-pointer">
+              <a href="#contact">Contact</a>
             </motion.li>
 
             <Link to={"/blog"}>
-              <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer">Blog
+              <motion.li
+                whileHover="hover"
+                whileTap="tap"
+                variants={varients}
+                className="cursor-pointer">
+                Blog
               </motion.li>
             </Link>
 
