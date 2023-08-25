@@ -9,7 +9,7 @@ const Blog = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ type: "tween", duration: 0.5 }}
                 className="light bg-primaryDark w-[90%] md:w-[50%] mx-auto mt-[150px]">
-                <div className="flex justify-between itwms-center">
+                <div className="flex justify-between items-center">
                     <img
                         className="ml-[10px]"
                         src={avatar}
@@ -18,7 +18,7 @@ const Blog = () => {
                         height={100}
                     />
 
-                    <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] absolute text-secondary text-center">
+                    <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] text-secondary text-center mr-[50px]">
                         My Blog
                     </button>
                 </div>
