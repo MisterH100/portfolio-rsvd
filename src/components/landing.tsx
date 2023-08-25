@@ -13,8 +13,8 @@ const Landing = () => {
         <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex flex-col justify-center items-center pt-[200px]">
           <motion.a
             initial={{opacity: 0}}
-            whileInView={{ opacity: 1, x:[-200, 0] }}
-            transition={{ type: "spring", delay: 3 }}
+            whileInView={{ opacity: 1, y:[-100, 0] }}
+            transition={{ type: "spring", delay: 2.3 }}
             viewport={{ once: true }}
             href="mailto:handsomenyathi1@gmail.com">
             <img
@@ -25,13 +25,18 @@ const Landing = () => {
               height={50}
             />
             </motion.a>
-          <h3 className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></h3>
+          <motion.h3
+            initial={{opacity: 0}}
+            whileInView={{ opacity: 1, y:[-100, 0] }}
+            transition={{ type: "spring", delay: 2.3 }}
+            viewport={{ once: true }}
+            className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></motion.h3>
         </div>
   
         <div className="w-[60%] h-full flex flex-col py-[40px] items-center gap-[40px] md:items-start md:justify-center lg:px-[40px]">
           <motion.h2
             initial={{opacity: 0}}
-            whileInView={{ opacity: 1, x:[-200, 0] }}
+            whileInView={{ opacity: 1}}
             transition={{ type: "spring", delay: 3 }}
             viewport={{ once: true }}
             className="text-[2rem]">hello, i am Handsome
@@ -39,19 +44,18 @@ const Landing = () => {
 
           <motion.h1
             initial={{opacity: 0}}
-            whileInView={{ opacity: 1, x:[-200, 0] }}
+            whileInView={{ opacity: 1}}
             transition={{ type: "spring", delay: 3}}
             viewport={{ once: true }}
-            className="text-[3rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.
+            className="text-[2rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.
           </motion.h1>
           
           <motion.div
             initial={{opacity: 0}}
-            whileInView={{ opacity: 1, x:[-200, 0] }}
-            transition={{ type: "spring", delay: 2}}
+            whileInView={{ opacity: 1 }}
+            transition={{ type: "spring", delay: 3}}
             viewport={{ once: true }}
-            className="flex flex-wrap gap-[10px] p-[10px]">
-            <p>Skills: </p>
+            className="flex flex-wrap gap-[10px] pt-[10px]">
             {skillData.map((item) => {
               return (
                 <li
@@ -68,7 +72,12 @@ const Landing = () => {
         </div>
   
   
-        <div className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[100px]">
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{ opacity: 1, y:[-100, 0] }}
+          transition={{ type: "spring", delay: 2.3}}
+          viewport={{ once: true }}
+          className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[100px]">
           <h3 className="rotate-90"> follow me</h3>
           <motion.div
             whileInView={{height: [0, 50]}}
@@ -113,7 +122,7 @@ const Landing = () => {
                 />
                 
             </motion.a>  
-        </div>
+        </motion.div>
       </section>
     )
 }
