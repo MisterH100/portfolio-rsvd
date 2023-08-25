@@ -10,27 +10,35 @@ const Landing = () => {
     return(
       <section className="bg-background5 bg-center bg-opacity-0 w-full h-full flex" id="home">
         
-        <div className="w-[20%] h-full opacity-0 lg:opacity-[6] flex flex-col justify-center items-center pt-[200px]">
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{ opacity: 1, y:[-100, 0] }}
+          transition={{ type: "spring", delay: 2.3}}
+          viewport={{ once: true }}
+          className="w-[20%] h-full flex flex-col items-center justify-between gap-[40px] whitespace-nowrap pt-[100px]">
+          <h3 className="text-[1rem] rotate-90">my email</h3>
+
+          <motion.div
+            whileInView={{height: [0, 50]}}
+            transition={{ type: "spring", delay: 3 }}
+            viewport={{ once: true }}
+            className="w-[1px] h-[50px] bg-secondary">
+          </motion.div>
+          
           <motion.a
             initial={{opacity: 0}}
-            whileInView={{ opacity: 1, y:[-100, 0] }}
-            transition={{ type: "spring", delay: 2.3 }}
+            whileInView={{ opacity: 1, y: [-100, 0] }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{rotate: [0,-45, 0, 45,0]}}
             viewport={{ once: true }}
             href="mailto:handsomenyathi1@gmail.com">
             <img
+              className="w-[20px] h-[20px] lg:w-[50px] lg:h-[50px]"
               src={envelope}
               alt="envelope"
-              width={50}
-              height={50}
             />
             </motion.a>
-          <motion.h3
-            initial={{opacity: 0}}
-            whileInView={{ opacity: 1, y:[-100, 0] }}
-            transition={{ type: "spring", delay: 2.3 }}
-            viewport={{ once: true }}
-            className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></motion.h3>
-        </div>
+        </motion.div>
   
         <div className="w-[60%] h-full flex flex-col py-[40px] items-center gap-[40px] md:items-start md:justify-center lg:px-[40px]">
           <motion.h2
@@ -77,13 +85,12 @@ const Landing = () => {
           transition={{ type: "spring", delay: 2.3}}
           viewport={{ once: true }}
           className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[100px]">
-          <h3 className="rotate-90"> follow me</h3>
+          <h3 className="rotate-90 text-[1rem]"> follow me</h3>
           <motion.div
             whileInView={{height: [0, 50]}}
             transition={{ type: "spring", delay: 3 }}
             viewport={{ once: true }}
             className="w-[1px] h-[50px] bg-secondary">
-  
           </motion.div>
             <motion.a
               whileHover={{ scale: 1.5 }}
