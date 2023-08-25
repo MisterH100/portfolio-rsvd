@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isScrolled, setisScrolled] = useState(false);
   const varients = {
@@ -36,8 +36,10 @@ const Header = () => {
             <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer"><a href="#contact">Contact</a>
             </motion.li>
 
-            <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer"><a href="#contact">Blog</a>
-            </motion.li>
+            <Link to={"/blog"}>
+              <motion.li whileHover="hover" whileTap="tap" variants={varients} className="cursor-pointer">Blog
+              </motion.li>
+            </Link>
 
           </ul>
         </nav>

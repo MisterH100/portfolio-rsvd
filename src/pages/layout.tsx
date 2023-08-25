@@ -16,9 +16,18 @@ const Loading = () => {
 
 const Layout = () => {
     const [onLoad, setOnload] = useState(true);
-    window.addEventListener("load", () => {
-        console.log("Loading")
+    /* const [cursor, setCursor] = useState({
+        x: 0,
+        y: 0
+    })*/
+
+    /*window.addEventListener("mousemove", (e) => {
+        setCursor( {...cursor,x: e.clientX, y: e.clientY})
     })
+    const styles = { 
+        transform: `translate(${cursor.x}px, ${cursor.y}px)` 
+    };*/
+
     useEffect(() => {
         setTimeout(() => {
             setOnload(false);
@@ -27,10 +36,12 @@ const Layout = () => {
     
     return (
         <section className="relative">
-            {onLoad? <Loading/>: ""}
+            {onLoad ? <Loading /> : ""}
+            {/*<div className="absolute w-[50px] h-[50px] rounded-[50%] bg-white" style={styles}>
+            </div>*/}
             <Header />
             <Landing />
-            <Works />
+            <Works />   
             <Contact/>
             <Footer />
         </section>

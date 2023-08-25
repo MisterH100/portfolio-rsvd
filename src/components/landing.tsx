@@ -48,7 +48,7 @@ const Landing = () => {
           <motion.div
             initial={{opacity: 0}}
             whileInView={{ opacity: 1, x:[-200, 0] }}
-            transition={{ type: "spring", delay: 3 }}
+            transition={{ type: "spring", delay: 2}}
             viewport={{ once: true }}
             className="flex flex-wrap gap-[10px] p-[10px]">
             <p>Skills: </p>
