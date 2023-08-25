@@ -2,64 +2,79 @@ import { motion } from "framer-motion"
 import github from '../assets/github.svg';
 import linkedIn from '../assets/linkedIn.svg';
 import twitter from '../assets/twitter.svg';
+import envelope from '../assets/envelope.svg';
 import { skillData } from '../data/data';
 
 const Landing = () => {
 
-
     return(
-      <section className="bg-background5 bg-center bg-opacity-0 w-full h-[100vh] flex" id="home">
-        <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex justify-center items-center px-[40px] pt-[100px] lg:pt-[360px]">
+      <section className="bg-background5 bg-center bg-opacity-0 w-full h-full flex" id="home">
+        
+        <div className="w-[20%] h-full opacity-0 sm:opacity-[6] flex flex-col justify-center items-center pt-[200px]">
+          <motion.a
+            initial={{opacity: 0}}
+            whileInView={{ opacity: 1, x:[-200, 0] }}
+            transition={{ type: "spring", delay: 3 }}
+            viewport={{ once: true }}
+            href="mailto:handsomenyathi1@gmail.com">
+            <img
+              className="opacity-0 lg:opacity-[6]"
+              src={envelope}
+              alt="envelope"
+              width={50}
+              height={50}
+            />
+            </motion.a>
           <h3 className="rotate-90 lg:rotate-0 text-[0.8rem]"><a href="mailto:handsomenyathi1@gmail.com">handsomenyathi1@gmail.com</a></h3>
         </div>
   
         <div className="w-[60%] h-full flex flex-col py-[40px] items-center gap-[40px] md:items-start md:justify-center lg:px-[40px]">
           <motion.h2
-            initial={{opacity: 0, scale: 0}}
-            whileInView={{ opacity: 1, scale:1 }}
+            initial={{opacity: 0}}
+            whileInView={{ opacity: 1, x:[-200, 0] }}
             transition={{ type: "spring", delay: 3 }}
             viewport={{ once: true }}
             className="text-[2rem]">hello, i am Handsome
           </motion.h2>
 
           <motion.h1
-            initial={{opacity: 0, scale: 0}}
-            whileInView={{ opacity: 1, scale:1}}
+            initial={{opacity: 0}}
+            whileInView={{ opacity: 1, x:[-200, 0] }}
             transition={{ type: "spring", delay: 3}}
             viewport={{ once: true }}
             className="text-[3rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.
           </motion.h1>
           
           <motion.div
-            initial={{opacity: 0, scale: 0}}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{opacity: 0}}
+            whileInView={{ opacity: 1, x:[-200, 0] }}
             transition={{ type: "spring", delay: 3 }}
             viewport={{ once: true }}
-            className="flex flex-wrap gap-[10px] pt-[10px]">
-            <p>My Array of Skills [ </p>
+            className="flex flex-wrap gap-[10px] p-[10px]">
+            <p>Skills: </p>
             {skillData.map((item) => {
               return (
                 <li
                   className="list-none underline cursor-pointer"
                   key={item.id}
+                  title={item.title}
                 >
                   {item.title}
                 </li>
               )
             })}
-            <span>]</span>
           </motion.div>
 
         </div>
   
   
-        <div className="w-[20%] h-full flex flex-col items-center justify-center gap-[50px] whitespace-nowrap pt-[40px]">
+        <div className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[100px]">
           <h3 className="rotate-90"> follow me</h3>
           <motion.div
-            whileInView={{ y: [-100, 0] }}
+            whileInView={{height: [0, 50]}}
             transition={{ type: "spring", delay: 3 }}
             viewport={{ once: true }}
-            className="w-[1px] h-[100px] bg-secondary">
+            className="w-[1px] h-[50px] bg-secondary">
   
           </motion.div>
             <motion.a

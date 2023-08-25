@@ -2,7 +2,7 @@ import avatar from '../assets/avatar.png'
 import Modal from './modal';
 import { useState } from 'react';
 import axios from 'axios';
-
+import { motion } from "framer-motion";
 
 
 const Contact = () => {
@@ -59,10 +59,19 @@ const Contact = () => {
 
     return (
         <section className="bg-background5 bg-center w-full h-full relative " id="contact">
-            <div className="flex items-center px-[10%] md:px-[20%] py-[100px]">
-                <h1 className="text-[2rem] font-bold whitespace-nowrap">Contact Me</h1>
+            <div className="flex items-center w-full justify-center py-[50px]">
+                <motion.h1
+                    initial={{opacity: 0}}
+                    whileInView={{ x: [-200, 0],opacity: 1 }}
+                    transition={{type: "tween", duration: 0.5}}
+                    className="text-[2rem] font-bold whitespace-nowrap">Contact Me
+                </motion.h1>
             </div>
-            <form onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
+            <motion.form
+                initial={{opacity: 0, scale: 0}}
+                whileInView={{ opacity: 1, scale: 0.9 }}
+                transition={{ type: "tween",duration: 0.5 }}
+                onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
                 <label
                     className="w-[200px] md:w-[400px]"
                     htmlFor="name">Name
@@ -120,9 +129,13 @@ const Contact = () => {
                     disabled = {loading}
                     value={loading? "sending...": "submit"}
                 />
-            </form>
+            </motion.form>
 
-            <div className="bg-primaryDark w-[500px] absolute top-[200px] right-[10px] hidden lg:block -z-[10px]">
+            <motion.div 
+                initial={{opacity: 0, scale: 0}}
+                whileInView={{ opacity: 1, scale: 0.8 }}
+                transition={{ type: "tween", duration: 0.5 }}
+                className="light bg-primaryDark w-[500px] absolute top-[150px] right-[100px] hidden lg:block -z-[10px]">
 
                 <img
                     className="ml-[10px]"
@@ -139,7 +152,7 @@ const Contact = () => {
                     My Blog
                 </button>
  
-            </div>
+            </motion.div>
 
             {status ?
                 <Modal

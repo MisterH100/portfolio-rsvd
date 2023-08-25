@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion"
 
 interface IModal{
     modalHeading: string,
@@ -10,7 +10,11 @@ interface IModal{
 
 const Modal = ({ modalHeading,modalMessage,modalAction,modalStatus}:IModal) =>{
     return (
-        <article className="absolute backdrop-blur-sm w-full h-full top-0 text-black flex justify-center items-center">
+        <motion.article
+            initial={{scale: 0}}
+            whileInView={{ scale: 1 }}
+            transition={{type: "tween"}}
+            className="absolute backdrop-blur-sm w-full h-full top-0 text-black flex justify-center items-center">
             <div className=" bg-secondary w-[50%] h-[200px] flex flex-col justify-center items-center shadow-lg">
                 <h1 className="text-red text-[2rem]">{modalHeading}</h1>
                 <p className="text-black text-[1rem]">{modalMessage}</p>
@@ -20,7 +24,7 @@ const Modal = ({ modalHeading,modalMessage,modalAction,modalStatus}:IModal) =>{
                     {modalAction}
                 </button>
             </div>
-        </article>
+        </motion.article>
     )
 }
 

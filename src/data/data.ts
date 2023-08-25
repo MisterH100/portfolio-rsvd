@@ -14,8 +14,8 @@ export const workData = [
     },
     {
         id: 3,
-        title: "Num 3",
-        disc: "",
+        title: "Comming Soon....",
+        disc: "!!!This project is under development, coming soon........",
         img: "../assets/sizzleapp.png"
     }
 ]
