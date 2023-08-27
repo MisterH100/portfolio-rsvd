@@ -68,5 +68,11 @@ export const skillData = [
         title: "Figma",
         disc: "",
         img: ""
+    },
+    {
+        id: 9,
+        title: "git",
+        disc: "",
+        img: ""
     }
 ]

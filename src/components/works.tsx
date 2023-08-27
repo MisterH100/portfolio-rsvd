@@ -3,7 +3,7 @@ import { workData } from "../data/data";
 
 const Works = () => {
     return (
-        <section className="bg-background5 bg-center  w-full h-full flex flex-col" id="work">
+        <section className="bg-background5 bg-center  w-full h-full flex flex-col py-[50px]" id="work">
             <div className="flex items-center w-full justify-center py-[50px]">
                 <motion.h1
                     initial={{opacity: 0}}
@@ -16,10 +16,10 @@ const Works = () => {
                 {workData.map((data) => {
                     return (
                         <motion.article
-                            initial={{opacity: 0, scale: 0}}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            whileHover={{ y: -3}}
+                            initial={{opacity: 0}}
+                            whileInView={{ opacity: 1 }}
                             transition={{ type: "tween", duration: 0.5 }}
+                            
                             className="light"
                             key={data.id}>
 

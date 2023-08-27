@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import loadingAnimation from '../assets/loading.gif';
 import Header from '../components/header';
 import Landing from '../components/landing';
+import Skills from '../components/skills';
 import Works from '../components/works';
+import AboutMe from '../components/aboutme';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
 
@@ -41,7 +43,9 @@ const Layout = () => {
             </div>*/}
             <Header />
             <Landing />
-            <Works />   
+            <Skills/>
+            <Works /> 
+            <AboutMe/>
             <Contact/>
             <Footer />
         </section>

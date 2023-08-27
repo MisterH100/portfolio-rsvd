@@ -3,19 +3,19 @@ import github from '../assets/github.svg';
 import linkedIn from '../assets/linkedIn.svg';
 import twitter from '../assets/twitter.svg';
 import envelope from '../assets/envelope.svg';
-import { skillData } from '../data/data';
+
 
 const Landing = () => {
 
     return(
-      <section className="bg-background5 bg-center bg-opacity-0 w-full h-full flex" id="home">
+      <section className="bg-background5 bg-center bg-opacity-0 w-full h-screen flex py-[50px]" id="home">
         
         <motion.div
           initial={{opacity: 0}}
           whileInView={{ opacity: 1, y:[-100, 0] }}
           transition={{ type: "spring", delay: 2.3}}
           viewport={{ once: true }}
-          className="w-[20%] h-full flex flex-col items-center justify-between gap-[40px] whitespace-nowrap pt-[100px]">
+          className="w-[20%] h-full flex flex-col items-center gap-[40px] whitespace-nowrap pt-[150px]">
           <h3 className="text-[1rem] rotate-90">my email</h3>
 
           <motion.div
@@ -56,26 +56,6 @@ const Landing = () => {
             viewport={{ once: true }}
             className="text-[2rem] md:text-[4rem]">using code to bring <span className="font-black">websites</span> to life.
           </motion.h1>
-          
-          <motion.div
-            initial={{opacity: 0}}
-            whileInView={{ opacity: 1 }}
-            transition={{ type: "spring", delay: 3}}
-            viewport={{ once: true }}
-            className="flex flex-wrap gap-[10px] pt-[10px]">
-            {skillData.map((item) => {
-              return (
-                <li
-                  className="list-none underline cursor-pointer"
-                  key={item.id}
-                  title={item.title}
-                >
-                  {item.title}
-                </li>
-              )
-            })}
-          </motion.div>
-
         </div>
   
   

@@ -27,7 +27,7 @@ const Header = () => {
       <header className={isScrolled?"bg-primaryDark sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center": "sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center"}>
         <motion.h1
           initial={{opacity: 0}}
-          whileInView={{ opacity: 1, x:[200, 200, 150, 100, 50, 0] }}
+          whileInView={{ opacity: 1, y:[-100, 0] }}
           transition={{ type: "spring", duration: 7}}
           viewport={{ once: true }}
           className="text-[3rem] text-secondary font-light cursor-pointer"><a href="/">handsome.<span className="font-extrabold">dev</span></a>
@@ -35,7 +35,7 @@ const Header = () => {
 
         <motion.nav
           initial={{opacity: 0}}
-          whileInView={{ opacity: 1, x:[-200, 0] }}
+          whileInView={{ opacity: 1, y:[-100, 0] }}
           transition={{ type: "spring", delay: 2 }}
           viewport={{ once: true }}
           className="w-full px-[20px] lg:px-[10px] flex justify-center lg:justify-end">

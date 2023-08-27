@@ -3,7 +3,7 @@ import Modal from './modal';
 import { useState } from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion";
-
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     const [status, setStatus] = useState<boolean>();
@@ -25,7 +25,7 @@ const Contact = () => {
         })
     }
 
-    const HanleSubmit = (e: React.FormEvent) => {
+    const HandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true)
 
@@ -58,7 +58,7 @@ const Contact = () => {
     }
 
     return (
-        <section className="bg-background5 bg-center w-full h-full relative " id="contact">
+        <section className="bg-background5 bg-center w-full h-full relative py-[50px]" id="contact">
             <div className="flex items-center w-full justify-center py-[50px]">
                 <motion.h1
                     initial={{opacity: 0}}
@@ -68,10 +68,10 @@ const Contact = () => {
                 </motion.h1>
             </div>
             <motion.form
-                initial={{opacity: 0, scale: 0}}
-                whileInView={{ opacity: 1, scale: 0.9 }}
-                transition={{ type: "tween",duration: 0.5 }}
-                onSubmit={HanleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
+                initial={{opacity: 0}}
+                whileInView={{ opacity: 1 }}
+                transition={{ type: "tween", duration: 0.5 }}
+                onSubmit={HandleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
                 <label
                     className="w-[200px] md:w-[400px]"
                     htmlFor="name">Name
@@ -132,25 +132,28 @@ const Contact = () => {
             </motion.form>
 
             <motion.div 
-                initial={{opacity: 0, scale: 0}}
-                whileInView={{ opacity: 1, scale: 0.8 }}
+                initial={{opacity: 0}}
+                whileInView={{ opacity: 1}}
                 transition={{ type: "tween", duration: 0.5 }}
-                className="light bg-primaryDark w-[500px] absolute top-[150px] right-[100px] hidden lg:block -z-[10px]">
-
-                <img
-                    className="ml-[10px]"
-                    src={avatar}
-                    alt="avatar image"
-                    width={100}
-                    height={100}
-                />
+                className="light bg-primaryDark w-[500px] absolute top-[200px] right-[100px] hidden lg:block -z-[10px]">
+                <div className="flex justify-between items-center">
+                    <img
+                        className="ml-[10px]"
+                        src={avatar}
+                        alt="avatar image"
+                        width={100}
+                        height={100}
+                    />
+                    <Link to={"/blog"}>
+                        <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] text-secondary text-center mr-[50px]">
+                            My Blog
+                        </button>
+                    </Link>
+                </div>
                 <div className="bg-secondary p-[20px]">
                     <h1 className="text-black text-[2rem]">Care to check out my blog</h1>
                     <p className="text-black text-[1rem] w-[400px] whitespace-wrap">Why is UI important, how does a website benefit from having a good ui, how it creates a trust between you and your users, find out more about ui design as i dig deep into it</p>
                 </div>
-                <button className="bg-primary hover:bg-primaryLight transition ease-in-out duration-300 w-[100px] h-[50px] absolute top-[50px] right-[50px] text-secondary text-center">
-                    My Blog
-                </button>
  
             </motion.div>
 
