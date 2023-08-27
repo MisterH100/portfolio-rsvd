@@ -36,8 +36,8 @@ const Contact = () => {
             message: formData.message
 
         })
-        .then(function (response) {
-            console.log(response);
+        .then((response) =>{
+            console.log("form data sent", response.status);
             setTimeout(() => {
                 setStatus(true);
                 setLoading(false);
@@ -45,13 +45,13 @@ const Contact = () => {
                 setModalText("form submitted, thank you");
             }, 3000);
         })
-        .catch(function (error) {
+        .catch((error) =>{
             console.log(error);
             setTimeout(() => {
                 setStatus(true);
                 setLoading(false);
                 setHeading("Error");
-                setModalText("form failed to submit");
+                setModalText("form failed to submit, consider using my email: handsomenyathi1@gmail.com");
             }, 3000);
         });
 
