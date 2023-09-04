@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import tap from '../assets/tap.wav';
 import github from '../assets/github.svg';
 import linkedIn from '../assets/linkedIn.svg';
 import twitter from '../assets/twitter.svg';
@@ -6,7 +7,11 @@ import envelope from '../assets/envelope.svg';
 
 
 const Landing = () => {
+  const tapSound = new Audio(tap);
 
+  const playSound = () => {
+    tapSound.play();
+  }
     return(
       <section className="bg-background5 bg-center bg-opacity-0 w-full h-screen flex py-[50px]" id="home">
         
@@ -15,7 +20,7 @@ const Landing = () => {
           whileInView={{ opacity: 1, y:[-100, 0] }}
           transition={{ type: "spring", delay: 2.3}}
           viewport={{ once: true }}
-          className="w-[20%] h-full flex flex-col items-center gap-[40px] whitespace-nowrap pt-[150px]">
+          className="w-[20%] h-full flex flex-col items-center gap-[40px] whitespace-nowrap pt-[120px]">
           <h3 className="text-[1rem] rotate-90">my email</h3>
 
           <motion.div
@@ -31,7 +36,9 @@ const Landing = () => {
             whileHover={{ scale: 1.2 }}
             whileTap={{rotate: [0,-45, 0, 45,0]}}
             viewport={{ once: true }}
-            href="mailto:handsomenyathi1@gmail.com">
+            href="mailto:handsomenyathi1@gmail.com"
+            onClick={playSound}
+          >
             <img
               className="w-[20px] h-[20px] lg:w-[50px] lg:h-[50px]"
               src={envelope}
@@ -64,7 +71,7 @@ const Landing = () => {
           whileInView={{ opacity: 1, y:[-100, 0] }}
           transition={{ type: "spring", delay: 2.3}}
           viewport={{ once: true }}
-          className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[100px]">
+          className="w-[20%] h-full flex flex-col items-center justify-center gap-[40px] whitespace-nowrap pt-[50px]">
           <h3 className="rotate-90 text-[1rem]"> follow me</h3>
           <motion.div
             whileInView={{height: [0, 50]}}
@@ -75,7 +82,9 @@ const Landing = () => {
             <motion.a
               whileHover={{ scale: 1.5 }}
               whileTap={{rotate: [0,-45, 0, 45,0]}}
-              href="https://github.com/misterh100" target="_blank">
+              href="https://github.com/misterh100" target="_blank"
+              onClick={playSound}
+            >
                 <img
                     src={github}
                     alt="github"
@@ -87,7 +96,9 @@ const Landing = () => {
             <motion.a
               whileHover={{ scale: 1.5 }}
               whileTap={{rotate: [0,-45, 0, 45,0]}}
-                href="https://linkedin.com/in/handsome-nyathi-9a3116275" target="_blank">      
+              href="https://linkedin.com/in/handsome-nyathi-9a3116275" target="_blank"
+              onClick={playSound}
+            >      
                 <img
                     src={linkedIn}
                     alt="linkedin"
@@ -99,7 +110,9 @@ const Landing = () => {
             <motion.a
               whileHover={{ scale: 1.5 }}
               whileTap={{rotate: [0,-45, 0, 45,0]}}
-              href="https://twitter.com/handsome_nyathi" target="_blank">
+              href="https://twitter.com/handsome_nyathi" target="_blank"
+              onClick={playSound}
+            >
                 <img
                     src={twitter}
                     alt="twitter"

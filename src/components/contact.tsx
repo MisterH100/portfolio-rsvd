@@ -1,4 +1,6 @@
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/avatar.png';
+import pop from '../assets/pop.mp3';
+import keyPress from '../assets/softkeypress.wav';
 import Modal from './modal';
 import { useState } from 'react';
 import axios from 'axios';
@@ -10,7 +12,9 @@ const Contact = () => {
     const [loading, setLoading] = useState<boolean>();
     const [modalText, setModalText] = useState("");
     const [heading, setHeading] = useState("");
-    
+    const popSound = new Audio(pop);
+    const keySound = new Audio(keyPress);
+
     const [formData, setFormData] = useState({
         name: "",
         lastName: "",
@@ -23,6 +27,7 @@ const Contact = () => {
             ...formData,
             [e.target.name]: e.target.value
         })
+        keySound.play();
     }
 
     const HandleSubmit = (e: React.FormEvent) => {
@@ -43,6 +48,7 @@ const Contact = () => {
                 setLoading(false);
                 setHeading("submitted");
                 setModalText("form submitted, thank you");
+                popSound.play();
             }, 3000);
         })
         .catch((error) =>{
@@ -52,6 +58,7 @@ const Contact = () => {
                 setLoading(false);
                 setHeading("Error");
                 setModalText("form failed to submit, consider using my email: handsomenyathi1@gmail.com");
+                popSound.play();
             }, 3000);
         });
 
@@ -62,7 +69,7 @@ const Contact = () => {
             <div className="flex items-center w-full justify-center py-[50px]">
                 <motion.h1
                     initial={{opacity: 0}}
-                    whileInView={{ x: [-200, 0],opacity: 1 }}
+                    whileInView={{opacity: 1 }}
                     transition={{type: "tween", duration: 0.5}}
                     className="text-[2rem] font-bold whitespace-nowrap">Contact Me
                 </motion.h1>
