@@ -10,9 +10,9 @@ import Footer from '../components/footer';
 
 const Loading = () => {
     return (
-        <div className="absolute top-0 bg-black w-full h-full z-[99] flex justify-center">
+        <div className="absolute top-0 bg-black w-full h-full z-[99]">
             <img
-                className="object-scale-down h-[500px]"
+                className="object-scale-down m-auto"
                 src={loadingAnimation}
                 alt="Loading..." 
             />
