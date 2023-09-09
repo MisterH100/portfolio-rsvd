@@ -16,10 +16,7 @@ export default {
         primaryDark: "#1C1818"
       },
       backgroundImage:  {
-        'background1': "url('water.gif')",
-        'background2': "url('./assets/backgrounddesktop.gif')",
-        'background3': "url('/assets/backgroundmobile.GIF')",
-        'background4': "url('./assets/background.gif')",
+        'background4': "url('./assets/background.png')",
         'background5': "url('./assets/grid.GIF')"
       }
     },

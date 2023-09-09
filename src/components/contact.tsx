@@ -65,7 +65,7 @@ const Contact = () => {
     }
 
     return (
-        <section className="bg-background5 bg-center w-full h-full relative py-[50px]" id="contact">
+        <section className="light w-full h-full relative py-[60px]" id="contact">
             <div className="flex items-center w-full justify-center py-[50px]">
                 <motion.h1
                     initial={{opacity: 0}}
@@ -142,7 +142,7 @@ const Contact = () => {
                 initial={{opacity: 0}}
                 whileInView={{ opacity: 1}}
                 transition={{ type: "tween", duration: 0.5 }}
-                className="light bg-primaryDark w-[500px] absolute top-[200px] right-[100px] hidden lg:block -z-[10px]">
+                className="glowShadow bg-primaryDark w-[500px] absolute top-[200px] right-[100px] hidden lg:block -z-[10px]">
                 <div className="flex justify-between items-center">
                     <img
                         className="ml-[10px]"

@@ -15,16 +15,16 @@ const Header = () => {
 
   window.addEventListener("scroll", () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 50) {
+    if (scrolled > 150) {
       setisScrolled(true)
     }
-    else if (scrolled < 50){
+    else if (scrolled < 150){
       setisScrolled(false)
     }
   })
     return (
       
-      <header className={isScrolled?"bg-primaryDark sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center": "sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center"}>
+      <header className={isScrolled?"bgBlur sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center": "sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center"}>
         <motion.h1
           initial={{opacity: 0}}
           whileInView={{ opacity: 1}}

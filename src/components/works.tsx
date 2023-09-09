@@ -3,7 +3,7 @@ import { workData } from "../data/data";
 
 const Works = () => {
     return (
-        <section className="bg-background5 bg-center  w-full h-full flex flex-col py-[50px]" id="work">
+        <section className="light w-full h-full flex flex-col py-[60px]" id="work">
             <div className="flex items-center w-full justify-center py-[50px]">
                 <motion.h1
                     initial={{opacity: 0}}
@@ -20,7 +20,7 @@ const Works = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ type: "tween", duration: 0.5 }}
                             
-                            className="light bg-primaryDark"
+                            className="bg-primaryDark glowShadow"
                             key={data.id}>
 
                             <div className="bg-secondary w-full md:w-[400px] min-w-[250px] h-[200px]">

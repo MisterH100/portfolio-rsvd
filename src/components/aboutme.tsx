@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
     return (
-        <section className="light w-full h-full py-[50px] bg-primaryDark flex flex-col justify-center items-center">
+        <section className="light w-full h-full py-[50px] flex flex-col justify-center items-center">
             <div className="flex items-center w-full justify-center">
                 <motion.h1
                     initial={{opacity: 0}}
