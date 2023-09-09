@@ -11,12 +11,12 @@ const AboutMe = () => {
                     className="text-[1.5rem] font-bold whitespace-nowrap">About me
                 </motion.h1>
             </div>
-            <div className="w-[50%] pt-[40px]">
+            <div className="w-full pt-[40px] px-[10px] md:px-[100px]">
                 <motion.p
                     initial={{opacity: 0}}
                     whileInView={{ opacity: 1 }}
                     transition={{type: "tween", duration: 0.5}}
-                    className="whitespace-wrap text-[1.2rem] text-secondary">
+                    className="whitespace-wrap text-[1.2rem] text-secondary w-full">
                     Greetings! I'm <span className="font-black">Handsome Nyathi</span>, a skilled web developer with a keen focus on UI/UX design exploration.My work revolves around the dynami <span className="underline">MERN</span> tech stack, enabling me to craft immersive digital experiences.Backed by years of web development expertise,I'm committed to delivering polished solutions.My boundlesse enthusiasm for technology drives my continuous learning and innovation.<span className="font-black">Let's collaborate and bring your digital visions to life!</span>.
                 </motion.p>
                 <ul className="text-[0.8rem] text-primaryLight pt-[40px] underline">Glossary:

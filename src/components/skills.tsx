@@ -13,7 +13,7 @@ const Skills = () => {
                 </motion.h1>
             </div>
             <div
-                className="flex flex-wrap gap-[10px] p-[10px] w-[50%] h-[50%] justify-center md:justify-start">
+                className="w-full flex flex-wrap gap-[10px] md:p-[10px] w-[50%] h-[50%] justify-center">
                 {skillData.map((item) => {
                 return (
                     <motion.li

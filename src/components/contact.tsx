@@ -78,9 +78,9 @@ const Contact = () => {
                 initial={{opacity: 0}}
                 whileInView={{ opacity: 1 }}
                 transition={{ type: "tween", duration: 0.5 }}
-                onSubmit={HandleSubmit} className="flex flex-col gap-[20px] px-[10%] pb-[50px] items-center lg:items-start">
+                onSubmit={HandleSubmit} className="flex flex-col gap-[20px] px-[10px] md:px-[10%] pb-[50px] items-center lg:items-start">
                 <label
-                    className="w-[200px] md:w-[400px]"
+                    className="w-[80%] md:w-[400px]"
                     htmlFor="name">Name
                     <input
                         className="block w-full bg-secondary p-[6px] text-black"
@@ -95,7 +95,7 @@ const Contact = () => {
                 </label>
 
                 <label
-                    className="w-[200px] md:w-[400px]"
+                    className="w-[80%] md:w-[400px]"
                     htmlFor="lastname">Lastname
                     <input
                         className="block w-full bg-secondary p-[6px] text-black"
@@ -109,7 +109,7 @@ const Contact = () => {
                 </label>
                 
                 <label
-                    className="w-[200px] md:w-[400px]"
+                    className="w-[80%] md:w-[400px]"
                     htmlFor="email">Email
                     <input
                         className="block w-full bg-secondary p-[6px] text-black"
@@ -122,7 +122,7 @@ const Contact = () => {
                     />
                 </label>
                 <label
-                    className="w-[200px] md:w-[400px] h-[100px]">Message
+                    className="w-[80%] md:w-[400px] h-[100px]">Message
                     <textarea
                         className="block bg-secondary p-[6px] w-full h-full text-black resize-none"
                         name="message"
