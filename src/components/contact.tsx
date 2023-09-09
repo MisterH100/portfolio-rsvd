@@ -2,7 +2,7 @@ import avatar from '../assets/avatar.png';
 import pop from '../assets/pop.mp3';
 import keyPress from '../assets/softkeypress.wav';
 import Modal from './modal';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
@@ -27,7 +27,7 @@ const Contact = () => {
             ...formData,
             [e.target.name]: e.target.value
         })
-        keySound.play();
+        keySound.play().then();
     }
 
     const HandleSubmit = (e: React.FormEvent) => {

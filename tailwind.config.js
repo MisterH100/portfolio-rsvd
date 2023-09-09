@@ -16,6 +16,7 @@ export default {
         primaryDark: "#1C1818"
       },
       backgroundImage:  {
+        'background3': "url('./assets/headshot.png')",
         'background4': "url('./assets/background.png')",
         'background5': "url('./assets/grid.GIF')"
       }
