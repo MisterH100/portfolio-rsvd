@@ -19,7 +19,26 @@ export const workData = [
         img: "../assets/sizzleapp.png"
     }
 ]
-
+export const socialsData =[
+    {
+        id: 1,
+        name: "github",
+        logo: "github.svg",
+        link: "https://github.com/misterh100"
+    },
+    {
+        id: 2,
+        name: "linkedIn",
+        logo: "linkedIn.svg",
+        link: "https://linkedIn.com/in/handsome-nyathi-9a3116275"
+    },
+    {
+        id: 3,
+        name: "twitter",
+        logo: "twitter.svg",
+        link: "https://twitter.com/handsome_nyathi"
+    }
+]
 export const skillData = [
     {
         id: 1,
