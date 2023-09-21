@@ -1,4 +1,4 @@
-import { Layout } from './Layout';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { About } from './components/sections/About';
 import { Contact } from './components/sections/Contact';
@@ -10,18 +10,13 @@ import { Portfolio } from './components/sections/Portfolio';
 function App() {
 
   return (
-    <main className="font-default">
-      <Layout
-        children={
-          <>
-          <Header/>
-          <Home/>
-          <About/>
-          <Portfolio/>
-          <Contact/>
-          </>
-        }
-      />
+    <main className="relative font-default">
+      <Header/>
+      <Home/>
+      <About/>
+      <Portfolio/>
+      <Contact/>
+      <Footer/>
     </main>
   )
 }
