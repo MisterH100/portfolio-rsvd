@@ -24,37 +24,47 @@ export const Contact =()=>{
 
     }
 
+    const ValidateDetails =(e: React.FormEvent)=>{
+        const  mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!formData.name){
+            setFormVerify(false)
+        }
+        if(!formData.email){
+            setFormVerify(false)
+        }
+        if(formData.email.match(mailformat)){
+            setFormVerify(true);
+            HandleSubmit(e);
+        }else{
+            setFormVerify(false)
+        }
+    }
 
     const HandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if(!formData.name && !formData.email){
-            setFormVerify(false)
-        }
-        else{
-            setLoading(true);
-            setFormVerify(true);
-            axios.post("http://localhost:8000/api/emails", {
-                name: formData.name,
-                email: formData.email,
-                message: formData.message
-    
-            })
-            .then((response) =>{
-                console.log("form data sent", response.status);
-                setTimeout(()=>{
-                    setLoading(false);
-                    setFailed(false)
-                    setIsSent(true)
-                },3000);
-            })
-            .catch((error) =>{
-                console.log(error);
-                setTimeout(()=>{
-                    setLoading(false);
-                    setFailed(true);
-                },3000);
-            });
-        }
+        setLoading(true);
+        axios.post("http://localhost:8000/api/emails/new", {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+
+        })
+        .then((response) =>{
+            console.log("form data sent, Status: ",response.status);
+            setTimeout(()=>{
+                setLoading(false);
+                setFailed(false)
+                setIsSent(true)
+            },3000);
+        })
+        .catch((error) =>{
+            console.log(error);
+            setTimeout(()=>{
+                setLoading(false);
+                setFailed(true);
+            },3000);
+        });
+        
 
     }
 
@@ -127,7 +137,7 @@ export const Contact =()=>{
                                 <span className="sr-only">Loading...</span>
                             </div>
                         } 
-                        action={HandleSubmit}/>
+                        action={ValidateDetails}/>
                     </div>
                 </form>
                 {!formVerify?
@@ -142,7 +152,7 @@ export const Contact =()=>{
                             </svg>
                             <span className="sr-only">Info</span>
                             <p>
-                                <span className="font-medium">Alert!</span>  Please input your name or input valid email address.
+                                <span className="font-medium">Alert!</span> Please fill in required feilds and input valid email address.
                             </p>
                         </motion.div>:null
                 }
@@ -166,6 +176,7 @@ export const Contact =()=>{
                         initial="hidden"
                         whileInView="visible"
                         transition={{type:"tween", duration:0.5}}
+                        viewport={{once:true}}
                         className="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
                         <svg className="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
