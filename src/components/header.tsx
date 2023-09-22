@@ -1,85 +1,47 @@
-import { motion } from "framer-motion";
-import {useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "./NavLink";
 
-const Header = () => {
-  const [isScrolled, setisScrolled] = useState(false);
-  const varients = {
-    hover: {
-      y: -2,
+
+const links = [
+    {
+        title: "Home",
+        path: "#home"
     },
-    tap: {
-      y: 2
+    {
+        title: "About",
+        path: "#about"
+    },
+    {
+        title: "Portfolio",
+        path: "#portfolio"
+    },
+    {
+        title: "Contact",
+        path: "#contact"
     }
-  }
+];
 
-  window.addEventListener("scroll", () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 150) {
-      setisScrolled(true)
-    }
-    else if (scrolled < 150){
-      setisScrolled(false)
-    }
-  })
-    return (
-      
-      <header className={isScrolled?"bgBlur sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center": "sticky top-0 z-[100] w-full h-[120px] flex flex-col lg:flex-row justify-center overflow-hidden lg:px-[80px] lg:justify-between items-center"}>
-        <motion.h1
-          initial={{opacity: 0}}
-          whileInView={{ opacity: 1}}
-          transition={{ type: "spring", duration: 7}}
-          viewport={{ once: true }}
-          className="text-[3rem] text-secondary font-light cursor-pointer"><a href="/">handsome.<span className="font-extrabold">dev</span></a>
-        </motion.h1>
+export const Header = () => {
+  const [selected, setSelected] = useState(links[0].title);
 
-        <motion.nav
-          initial={{opacity: 0}}
-          whileInView={{ opacity: 1}}
-          transition={{ type: "spring", delay: 2 }}
-          viewport={{ once: true }}
-          className="w-full px-[20px] lg:px-[10px] flex justify-center lg:justify-end">
-          <ul className="flex gap-[20px] lg:gap-[30px] font-normal text-[1.5rem] lg:text-[2rem]">
+  return (
+    <header className="sticky top-0 z-10 bg-transparent w-full h-20 flex justify-center md:items-center bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md  bg-opacity-40 border-b border-gray-100">
+        <nav className="w-full md:w-3/4 h-14 flex items-center justify-center gap-2">
+            {links.map((link) => (
+                <a href={link.path} key={link.title}>
+                    <NavLink
+                    text={link.title}
+                    selected={selected === link.title}
+                    setSelected={setSelected}
+                    />
+                </a>
+            ))}
+        </nav>
+    </header>
+  );
+};
 
-            <motion.li
-              whileHover="hover"
-              whileTap="tap"
-              variants={varients}>
-              <a href="#home">Home</a>
-            </motion.li>
 
-            <motion.li
-              whileHover="hover"
-              whileTap="tap"
-              variants={varients}
-              className="cursor-pointer">
-              <a href="#work">Work</a>
-            </motion.li>
 
-            <motion.li
-              whileHover="hover"
-              whileTap="tap"
-              variants={varients}
-              className="cursor-pointer">
-              <a href="#contact">Contact</a>
-            </motion.li>
 
-            <Link to={"/blog"}>
-              <motion.li
-                whileHover="hover"
-                whileTap="tap"
-                variants={varients}
-                className="cursor-pointer">
-                Blog
-              </motion.li>
-            </Link>
 
-          </ul>
-        </motion.nav>
-
-      </header>
-
-    )
-}
-  
-export default Header;
