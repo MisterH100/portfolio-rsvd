@@ -65,7 +65,6 @@ export const Home =()=>{
                     <Button text="Download Cv" action={()=>console.log("HandsomeDev")}/>
                 </a>
                 <div className="absolute w-full top-[80%] left-0 md:px-10 flex flex-col items-center md:items-start">
-                    <h3 className="text-primary hidden sm:block">follow:</h3>
                     <ul className="flex items-center sm:py-2 gap-10">
                         {socialsData.map(social=>
                             <li key={social.id} className="active:scale-90"><Link to={social.link} target="_blank"><img src={social.logo}/></Link></li>
