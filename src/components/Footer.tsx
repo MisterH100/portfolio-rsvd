@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { socialsData } from "../data/data"
-import handsomeDevLogo from '../assets/handsomedevLogo.png';
+import handsomeDevLogo from '../assets/handsomeDevLogo.png';
+
 export const Footer =()=>{
     return(
     <footer className="w-full h-[200px] flex items-center justify-center flex-wrap border-t">
