@@ -1,18 +1,22 @@
-import { Routes, Route } from 'react-router-dom';
-import Layout from './pages/layout';
-import ThankYou from './pages/thankyou';
-import Blog from './pages/blog';
-import Error from './pages/error';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { About } from './components/sections/About';
+import { Contact } from './components/sections/Contact';
+import { Home } from './components/sections/Home';
+import { Portfolio } from './components/sections/Portfolio';
+
+
+
 function App() {
 
   return (
-    <main className="font-default">
-      <Routes>
-        <Route path="/" element={<Layout/>}/>
-        <Route path="/thankyou" element={<ThankYou />} />
-        <Route path="/blog" element={<Blog/>}/>
-        <Route path="/error" element={<Error/>}/>
-      </Routes>
+    <main className="relative font-default">
+      <Header/>
+      <Home/>
+      <About/>
+      <Portfolio/>
+      <Contact/>
+      <Footer/>
     </main>
   )
 }

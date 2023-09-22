@@ -10,15 +10,14 @@ export default {
         'default':['Montserrat','Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
-        primary: "#171414",
-        primaryLight: "#4D4242",
-        secondary: "#D1C7C7",
-        primaryDark: "#1C1818"
+        primary: "#ffffff",
+        secondary: "#000000",
       },
       backgroundImage:  {
-        'background3': "url('./assets/headshot.png')",
-        'background4': "url('./assets/background.png')",
-        'background5': "url('./assets/grid.GIF')"
+        'home': "url('./assets/homebg.png')",
+        'about': "url('./assets/aboutbg.png')",
+        'skills': "url('./assets/skillsbg.png')",
+        'contact': "url('./assets/contactbg.png')"
       }
     },
   },
