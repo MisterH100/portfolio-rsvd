@@ -74,8 +74,7 @@ export const Portfolio =()=>{
                             className="relative w-full h-20 flex justify-between gap-2 rounded-sm border border-gray-400 mb-10 last:mb-0"
                             key={work.id}>
                             <Link
-                                to={'https://www.google.com'}
-                                target="_blank"
+                                to={'/'}
                                 className="absolute flex justify-end items-center w-full h-full top-0 left-0 opacity-0 hover:opacity-100">
                                 <img 
                                     className="h-full w-[60px] px-4 bg-orange-500 transition-opacity duration-100 object-fill shadow-[-30px_0_10px__rgba(0,0,0,0.3)]"

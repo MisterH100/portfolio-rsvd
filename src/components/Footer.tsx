@@ -13,13 +13,13 @@ export const Footer =()=>{
         </aside> 
         <nav className="w-full md:w-2/5 px-10 pt-10">
             <header className="text-2xl font-medium text-white">Social</header> 
-            <ul className="h-10 mt-10 flex gap-4">
-            {socialsData.map(social=>
-                            <li key={social.id} className="active:scale-90">
-                                <Link to={social.link} target="_blank"><img src={social.logo}/>
-                                </Link>
-                            </li>
-                        )}
+            <ul className="h-10 mt-10 flex items-center gap-4">
+                {socialsData.map(social=>
+                    <li key={social.id} className="active:scale-90">
+                        <Link to={social.link} target="_blank"><img src={social.logo}/>
+                        </Link>
+                    </li>
+                )}
             </ul>
         </nav>
     </footer>

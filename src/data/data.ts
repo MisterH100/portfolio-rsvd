@@ -38,6 +38,12 @@ export const socialsData =[
         name: "twitter",
         logo: "twitter.svg",
         link: "https://twitter.com/handsome_nyathi"
+    },
+    {
+        id: 4,
+        name: "email",
+        logo: "envelope.svg",
+        link: "mailto:handsoemnyatji1@gmail.com"
     }
 ]
 export const skillData = [

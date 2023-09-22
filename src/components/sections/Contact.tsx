@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Button } from "../Button"
-import axios from "axios";
 import { motion } from "framer-motion";
-import { varients } from "../../animations/AnimationVarients";
+import { alertVarients, varients } from "../../animations/AnimationVarients";
+import axios from "axios";
 
 
 export const Contact =()=>{
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [formVerify, setFormVerify] = useState(true);
+    const [failed, setFailed] = useState(false);
+    const [isSent, setIsSent] = useState(false)
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -24,26 +27,34 @@ export const Contact =()=>{
 
     const HandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
-
-        axios.post("http://localhost:8000/api/emails", {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message
-
-        })
-        .then((response) =>{
-            console.log("form data sent", response.status);
-            setTimeout(()=>{
-                setLoading(false);
-            },3000);
-        })
-        .catch((error) =>{
-            console.log(error);
-            setTimeout(()=>{
-                setLoading(false);
-            },3000);
-        });
+        if(!formData.name && !formData.email){
+            setFormVerify(false)
+        }
+        else{
+            setLoading(true);
+            setFormVerify(true);
+            axios.post("http://localhost:8000/api/emails", {
+                name: formData.name,
+                email: formData.email,
+                message: formData.message
+    
+            })
+            .then((response) =>{
+                console.log("form data sent", response.status);
+                setTimeout(()=>{
+                    setLoading(false);
+                    setFailed(false)
+                    setIsSent(true)
+                },3000);
+            })
+            .catch((error) =>{
+                console.log(error);
+                setTimeout(()=>{
+                    setLoading(false);
+                    setFailed(true);
+                },3000);
+            });
+        }
 
     }
 
@@ -70,7 +81,7 @@ export const Contact =()=>{
                             type="text"
                             id="name"
                             name="name" 
-                            placeholder="Name"
+                            placeholder={"Name"}
                             autoComplete="true"
                             required
                             onChange={HandleChange}
@@ -85,7 +96,7 @@ export const Contact =()=>{
                             type="email"
                             id="email"
                             name="email" 
-                            placeholder="Email adress"
+                            placeholder={"Email address"}
                             autoComplete="true"
                             required
                             onChange={HandleChange}
@@ -119,6 +130,52 @@ export const Contact =()=>{
                         action={HandleSubmit}/>
                     </div>
                 </form>
+                {!formVerify?
+                        <motion.div
+                            variants={alertVarients}
+                            initial="hidden"
+                            whileInView="visible"
+                            transition={{type:"tween", duration:0.5}}
+                            className="flex items-center p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-orange-500" role="alert">
+                            <svg className="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                            </svg>
+                            <span className="sr-only">Info</span>
+                            <p>
+                                <span className="font-medium">Alert!</span>  Please input your name or input valid email address.
+                            </p>
+                        </motion.div>:null
+                }
+                {failed?
+                    <motion.div 
+                        variants={alertVarients}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{type:"tween", duration:0.5}}
+                        className="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+                        <svg className="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        </svg>
+                        <span className="sr-only">Info</span>
+                        <div>
+                            <span className="font-medium">Error alert!</span>Form failed to submit, Please use my email: handsomenyathi1@gmail.com
+                        </div>
+                    </motion.div>:isSent?
+                    <motion.div 
+                        variants={alertVarients}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{type:"tween", duration:0.5}}
+                        className="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
+                        <svg className="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        </svg>
+                        <span className="sr-only">Info</span>
+                        <div>
+                            <span className="font-medium">Success alert!</span> Form submitted, Thank you.
+                        </div>
+                    </motion.div>:null
+                }
             </article>
         </section>
     )
