@@ -48,7 +48,10 @@ export const Contact =()=>{
             email: formData.email,
             message: formData.message
 
-        })
+        },
+        {headers: {
+            'Content-Type': 'application/json'
+        }})
         .then((response) =>{
             console.log("form data sent, Status: ",response.status);
             setTimeout(()=>{
@@ -57,6 +60,8 @@ export const Contact =()=>{
                 setIsSent(true)
             },3000);
         })
+
+
         .catch((error) =>{
             console.log(error);
             setTimeout(()=>{
