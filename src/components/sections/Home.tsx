@@ -8,8 +8,9 @@ import { varients } from "../../animations/AnimationVarients";
 
 
 export const Home =()=>{
-
+    
     return(
+
         <section id="home" className="relative flex flex-col w-full h-screen bg-home bg-center bg-cover px-10 md:px-20">
             <article className="w-full flex flex-col items-start md:items-end">
                 <div className="w-full md:w-2/5 p-4 mt-10 md:mt-40 bg-gray-400 rounded-3xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
