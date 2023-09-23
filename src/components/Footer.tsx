@@ -10,7 +10,7 @@ export const Footer =()=>{
                 src={handsomeDevLogo}
                 alt="HandsomeDev Logo"
             />
-            <p>Handsome dev.<br/>copyright 2023</p>
+            <p>Handsome dev.<br/>copyright 2023<br/>All rightd reserved</p>
         </aside> 
         <nav className="w-full md:w-2/5 px-10 pt-10">
             <header className="text-2xl font-medium text-white">Social</header> 

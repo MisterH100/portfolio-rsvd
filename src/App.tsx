@@ -5,8 +5,6 @@ import { Contact } from './components/sections/Contact';
 import { Home } from './components/sections/Home';
 import { Portfolio } from './components/sections/Portfolio';
 
-
-
 function App() {
 
   return (
