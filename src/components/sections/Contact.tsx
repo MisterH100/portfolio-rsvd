@@ -43,7 +43,7 @@ export const Contact =()=>{
     const HandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        axios.post("http://localhost:8000/api/emails/new", {
+        axios.post("https://misterh-api-server.onrender.com/api/emails/new", {
             name: formData.name,
             email: formData.email,
             message: formData.message

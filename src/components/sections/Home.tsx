@@ -65,7 +65,7 @@ export const Home =()=>{
                     className="w-full md:w-2/5 flex justify-center py-10">
                     <Button text="Download Cv" action={()=>console.log("HandsomeDev")}/>
                 </a>
-                <div className="absolute w-full top-[80%] left-0 md:px-10 flex flex-col items-center md:items-start">
+                <div className="absolute w-full h-20 top-[80%] left-0 md:px-10 flex flex-col items-center md:items-start">
                     <ul className="flex items-center sm:py-2 gap-10">
                         {socialsData.map(social=>
                             <li key={social.id} className="active:scale-90"><Link to={social.link} target="_blank"><img src={social.logo}/></Link></li>
@@ -75,4 +75,4 @@ export const Home =()=>{
             </article>
         </section>
     )
-}
+} 
