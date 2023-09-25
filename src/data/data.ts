@@ -2,20 +2,23 @@
 export const workData = [
     {
         id: 1,
-        title: "Sizzle - BBQ Finder",
-        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like, want to find out more? or better yet work with me feel free to contact me.",
-        img: "sizzle.svg"
+        title: "Insights - blogging",
+        disc: "Insights is my blogging application where i share my intrests in web development and my newly found research on UI/UX design, your want to share your intrests as well?, contact me to find out more.",
+        link: "https://insights-blogs.vercel.app",
+        img: "insights.svg"
     },
     {
         id: 2,
-        title: "Insights - blogging",
-        disc: "Insights is my blogging application where i share my intrests in web development and my newly found research on UI/UX design, your want to share your intrests as well?, contact me to find out more.",
-        img: "insights.svg"
+        title: "Sizzle - BBQ Finder",
+        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like, want to find out more? or better yet work with me feel free to contact me.",
+        link: "/",
+        img: "sizzle.svg"
     },
     {
         id: 3,
         title: "Comming Soon....",
         disc: "!!!This project is under development, coming soon........",
+        link: "/",
         img: ""
     }
 ]
@@ -24,25 +27,25 @@ export const socialsData =[
     {
         id: 1,
         name: "github",
-        logo: "github.svg",
+        logo: "../../../src/assets/github.svg",
         link: "https://github.com/misterh100"
     },
     {
         id: 2,
         name: "linkedIn",
-        logo: "linkedIn.svg",
+        logo: "../../../src/assets/linkedIn.svg",
         link: "https://linkedIn.com/in/handsome-nyathi-9a3116275"
     },
     {
         id: 3,
         name: "twitter",
-        logo: "twitter.svg",
+        logo: "../../../src/assets/twitter.svg",
         link: "https://twitter.com/handsome_nyathi"
     },
     {
         id: 4,
         name: "email",
-        logo: "envelope.svg",
+        logo: "../../../src/assets/envelope.svg",
         link: "mailto:handsoemnyatji1@gmail.com"
     }
 ]

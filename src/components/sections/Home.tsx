@@ -1,6 +1,5 @@
 import { socialsData } from "../../data/data"
 import { Link } from "react-router-dom";
-import { Button } from "../Button";
 import HandsomeCv from '../../assets/HandsomeNyathiCv.pdf'
 import { motion } from "framer-motion";
 import { varients } from "../../animations/AnimationVarients";
@@ -13,7 +12,7 @@ export const Home =()=>{
 
         <section id="home" className="relative flex flex-col w-full h-screen bg-home bg-center bg-cover px-10 md:px-20">
             <article className="w-full flex flex-col items-start md:items-end">
-                <div className="w-full md:w-2/5 p-4 mt-10 md:mt-40 bg-gray-400 rounded-3xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
+                <div className="w-full md:w-[400px] p-4 mt-10 md:mt-40 bg-gray-400 rounded-3xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
 
                     <div className=" h-20 border-b border-gray-100 overflow-hidden">
                         <motion.h1
@@ -59,13 +58,14 @@ export const Home =()=>{
                         </motion.p>
                     </div>
                 </div>
-                <a 
-                    href={HandsomeCv}
-                    download='Handsome-Nyathi-CV'
-                    className="w-full md:w-2/5 flex justify-center py-10">
-                    <Button text="Download Cv" action={()=>console.log("HandsomeDev")}/>
-                </a>
-                <div className="absolute w-full h-20 top-[80%] left-0 md:px-10 flex flex-col items-center md:items-start">
+                <div className="w-full md:w-[400px] flex justify-center py-10 px-4">
+                    <a 
+                        href={HandsomeCv}
+                        download='Handsome-Nyathi-CV'
+                        className="w-40 border border-primary rounded-3xl p-2 mx-auto text-primary text-center font-bold hover:bg-orange-500 active:scale-90 transition-all">Download CV
+                    </a>
+                </div>
+                <div className="absolute w-full h-20 top-[80%] left-0  md:px-10 flex flex-col items-center md:items-start">
                     <ul className="flex items-center sm:py-2 gap-10">
                         {socialsData.map(social=>
                             <li key={social.id} className="active:scale-90"><Link to={social.link} target="_blank"><img src={social.logo}/></Link></li>
