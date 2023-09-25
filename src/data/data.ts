@@ -27,25 +27,25 @@ export const socialsData =[
     {
         id: 1,
         name: "github",
-        logo: "../../../src/assets/github.svg",
+        logo: "github.svg",
         link: "https://github.com/misterh100"
     },
     {
         id: 2,
         name: "linkedIn",
-        logo: "../../../src/assets/linkedIn.svg",
+        logo: "linkedIn.svg",
         link: "https://linkedIn.com/in/handsome-nyathi-9a3116275"
     },
     {
         id: 3,
         name: "twitter",
-        logo: "../../../src/assets/twitter.svg",
+        logo: "twitter.svg",
         link: "https://twitter.com/handsome_nyathi"
     },
     {
         id: 4,
         name: "email",
-        logo: "../../../src/assets/envelope.svg",
+        logo: "envelope.svg",
         link: "mailto:handsoemnyatji1@gmail.com"
     }
 ]
