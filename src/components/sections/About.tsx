@@ -40,7 +40,6 @@ export const About =()=>{
                     <p className="mb-2 text-md tracking-tight leading-tight text-center text-white">I have a blog that revolves around learning about web development, UI/UX designing and everything under the umbrella of creativity and tech click on the link and lets share ideas</p>
                     <Link 
                         to="/collab"
-                        target="_blank"
                         className="w-fit h-fit p-4 mx-auto flex justify-center items-center border text-white border-white rounded-full  bg-orange-500 hover:bg-white hover:text-black active:scale-90 transition-all">
                         Lets Collab!                
                     </Link>
