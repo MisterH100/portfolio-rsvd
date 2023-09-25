@@ -25,6 +25,7 @@ export const Contact =()=>{
     }
 
     const ValidateDetails =(e: React.FormEvent)=>{
+        e.preventDefault()
         const  mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!formData.name){
             setFormVerify(false)
@@ -60,8 +61,6 @@ export const Contact =()=>{
                 setIsSent(true)
             },3000);
         })
-
-
         .catch((error) =>{
             console.log(error);
             setTimeout(()=>{
