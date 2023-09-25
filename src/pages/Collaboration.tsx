@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Button } from "../Button"
+import { Button } from "../components/Button";
 import { motion } from "framer-motion";
-import { alertVarients, varients } from "../../animations/AnimationVarients";
+import { alertVarients, varients } from "../animations/AnimationVarients";
+import { Link } from "react-router-dom";
+import userTie from "../assets/user-tie.svg";
 import axios from "axios";
 
 
-export const Contact =()=>{
+export const Collab =()=>{
     const [loading, setLoading] = useState(false);
     const [formVerify, setFormVerify] = useState(true);
     const [failed, setFailed] = useState(false);
@@ -73,7 +75,19 @@ export const Contact =()=>{
     }
 
     return(
-        <section id="contact" className="w-full h-full flex justify-center items-center bg-contact bg-center bg-cover md:bg-contain bg-no-repeat px-1 sm:px-10 md:px-20 pt-10 md:pt-40 py-40">
+        <section id="contact" className="w-full h-full md:h-screen flex flex-col justify-center items-center bg-contact bg-center bg-cover md:bg-contain bg-no-repeat px-1 sm:px-10 md:px-20 pt-10 md:pt-40 py-40">
+            <div className="w-full flex justify-center p-1 md:p-4 my-10">
+                <Link 
+                    to={'/'} 
+                    title="My portfolio"
+                    className="w-fit flex gap-2 h-fit text-xs p-2 border border-white rounded-full">
+                    <img
+                        src={userTie}
+                        to-portfolio
+                    />
+                    portfolio
+                </Link>
+            </div>
             <article className="w-full md:w-[500px] p-4 bg-gray-400 rounded-3xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
                 <div className="h-20 border-b border-gray-100">
                     <motion.h1 
@@ -83,8 +97,17 @@ export const Contact =()=>{
                         whileInView="visible"
                         transition={{ type: "tween", duration: 1}} 
                         viewport={{once:true}}
-                        className="w-full text-center text-4xl text-white font-medium ">Contact Me
+                        className="w-full text-center text-4xl text-white font-medium ">Lets Collab!
                     </motion.h1>
+                    <motion.h2
+                        variants={varients}
+                        custom={50}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{ type: "tween", duration: 1}} 
+                        viewport={{once:true}}
+                        className="w-full text-center text-sm text-white font-medium">Let me know you are from my blog in your message
+                    </motion.h2>
                 </div>
                 <form className="text-base font-medium">
                     <label 

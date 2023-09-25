@@ -10,5 +10,6 @@ export interface IWork{
     id: number;
     title: string;
     disc: string;
+    link: string
     img?: string;
 }

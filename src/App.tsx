@@ -1,20 +1,17 @@
-import { Footer } from './components/Footer';
-import { Header } from './components/header';
-import { About } from './components/sections/About';
-import { Contact } from './components/sections/Contact';
-import { Home } from './components/sections/Home';
-import { Portfolio } from './components/sections/Portfolio';
+import { Route, Routes } from 'react-router-dom';
+import { Collab} from './pages/Collaboration';
+import RootLayout from './Layout';
+import PageNotFound from './pages/404';
 
 function App() {
 
   return (
     <main className="relative font-default">
-      <Header/>
-      <Home/>
-      <About/>
-      <Portfolio/>
-      <Contact/>
-      <Footer/>
+      <Routes>
+        <Route path='*' element={<PageNotFound/>}/>
+        <Route path='/' element={<RootLayout/>}/>
+        <Route path="collab" element={<Collab/>}/>
+      </Routes>
     </main>
   )
 }
