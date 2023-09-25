@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path='*' element={<PageNotFound/>}/>
         <Route path='/' element={<RootLayout/>}/>
-        <Route path="collab" element={<Collab/>}/>
+        <Route path="/collab" element={<Collab/>}/>
       </Routes>
     </main>
   )
