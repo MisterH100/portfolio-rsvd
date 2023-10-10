@@ -9,18 +9,18 @@ export const workData = [
     },
     {
         id: 2,
+        title: "CQP Product Store",
+        disc: "Comfort Quality Price is a clothing and accesories store which offers a wide range of great comfort, great quality and great prices for each product",
+        link: "https://cqp-product-shop.vercel.app",
+        img: ""
+    },
+    {
+        id: 3,
         title: "Sizzle - BBQ Finder",
         disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like, want to find out more? or better yet work with me feel free to contact me.",
         link: "/",
         img: "sizzle.svg"
     },
-    {
-        id: 3,
-        title: "Comming Soon....",
-        disc: "!!!This project is under development, coming soon........",
-        link: "/",
-        img: ""
-    }
 ]
 
 export const socialsData =[
