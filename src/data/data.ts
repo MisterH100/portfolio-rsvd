@@ -2,24 +2,17 @@
 export const workData = [
     {
         id: 1,
-        title: "Insights - blogging",
-        disc: "Insights is my blogging application where i share my intrests in web development and my newly found research on UI/UX design, your want to share your intrests as well?, contact me to find out more.",
+        title: "Insights Blogging",
+        disc: "Share blogs on interesting tech topics, tutorials and tips",
         link: "https://insights-blogs.vercel.app",
-        img: "insights.svg"
+        img: "insights-cover.png"
     },
     {
         id: 2,
         title: "CQP Product Store",
-        disc: "Comfort Quality Price is a clothing and accesories store which offers a wide range of great comfort, great quality and great prices for each product",
+        disc: "Find comfortable, high quality and affordable products and accessories",
         link: "https://cqp-product-shop.vercel.app",
-        img: ""
-    },
-    {
-        id: 3,
-        title: "Sizzle - BBQ Finder",
-        disc: "Sizzle is a react bbq meat finder app using a FOOD rest API with data on places and prices of bbq, you can search and filter the type of bbq you like, want to find out more? or better yet work with me feel free to contact me.",
-        link: "/",
-        img: "sizzle.svg"
+        img: "cqp-cover.png"
     },
 ]
 
