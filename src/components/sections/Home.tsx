@@ -1,15 +1,14 @@
 import { socialsData } from "../../data/data"
 import { Link } from "react-router-dom";
-import HandsomeCv from '../../assets/HandsomeNyathiCv.pdf'
+import HandsomeCv from '../../assets/HandsomeNyathiCv.pdf';
 import { motion } from "framer-motion";
 import { varients } from "../../animations/AnimationVarients";
 
 
 
 export const Home =()=>{
-    
-    return(
 
+    return(
         <section id="home" className="relative flex flex-col w-full h-screen bg-home bg-center bg-cover px-10 md:px-20">
             <article className="w-full flex flex-col items-start md:items-end">
                 <div className="w-full md:w-[400px] p-4 mt-10 md:mt-40 bg-gray-400 rounded-3xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
@@ -54,7 +53,7 @@ export const Home =()=>{
                             whileInView="visible"
                             transition={{ type: "tween", duration: 1, delay:0.7}} 
                             viewport={{once:true}}
-                            className="text-primary text-sm sm:text-2xl font-thin sm:tracking-[0.5rem]">Web Developer
+                            className="text-primary text-sm sm:text-lg font-thin">Meet your next creative Web Developer
                         </motion.p>
                     </div>
                 </div>

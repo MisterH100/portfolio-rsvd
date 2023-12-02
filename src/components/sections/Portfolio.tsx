@@ -34,16 +34,17 @@ export const Portfolio =()=>{
                         className="w-full text-2xl text-white font-medium">Skills
                     </motion.h2>
                 </div>
-                <ul>
+                <ul className="flex flex-wrap gap-4">
                     {skillData.map((skill: ISkill) => 
                         <motion.li
                             variants={varients}
                             custom={50}
                             initial="hidden"
                             whileInView="visible"
-                            transition={{ type: "tween", duration: 1, delay:0.2 * skill.id}} 
+                            whileHover={{y:[0,-5,0,-5,0],transition:{delay:0}}}
+                            transition={{ type: "tween", duration: 0.5, delay:0.2 * skill.id}} 
                             viewport={{once:true}}
-                            className="w-full h-10 font-medium flex items-center justify-between border-b border-gray-100 last:border-none text-white"
+                            className="min-w-[60px] w-fit h-10 p-2 font-medium flex items-center justify-center border border-gray-100 text-white rounded-2xl bg-orange-500 shadow-lg cursor-pointer"
                             key={skill.id}>
                             {skill.title}
                         </motion.li> 
